@@ -15,10 +15,10 @@ celery_app = Celery(
 celery_app.conf.beat_schedule = {
     'run-daily-user-analysis': {
         'task': 'daily_empathy_analysis_task',
-        # 'schedule': 86400.0,  # 86400 seconds = 24 hours
+        'schedule': 86400.0,  # 86400 seconds = 24 hours
         
         # For testing, you can set a shorter schedule, e.g., 60.0 for every minute
-        'schedule': 200.0,
+        # 'schedule': 200.0,
     },
 }
 celery_app.conf.timezone = 'UTC'
